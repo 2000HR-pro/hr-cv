@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>H.R Links</title>  <style>
+  <title>H.R Links</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
     :root {
       --bg: #0f2027;
       --card: #1e2a32;
@@ -46,14 +49,15 @@
       50% { transform: translateY(-10px); }
     }
 
-    h1 {
-      margin: 10px 0;
-    }
+    h1 { margin: 10px 0; }
 
     .links a {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px; /* مسافة بين اللوجو والنص */
       background: var(--card);
-      margin: 10px 0;
+      margin: 12px 0;
       padding: 14px;
       border-radius: 12px;
       text-decoration: none;
@@ -62,25 +66,22 @@
       transition: 0.3s;
       position: relative;
       overflow: hidden;
+      font-weight: 500;
     }
 
-    .links a::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.5s;
-    }
-
-    .links a:hover::before {
-      left: 100%;
-    }
+    /* ألوان الأيقونات الأصلية */
+    .fa-whatsapp { color: #25D366; }
+    .fa-facebook { color: #1877F2; }
+    .fa-instagram { color: #E4405F; }
+    .fa-snapchat { color: #FFFC00; text-shadow: 0 0 2px black; }
+    .fa-tiktok { color: #000000; } /* لوجو تيك توك الأسود الشهير */
+    body.light .fa-tiktok { color: #000; }
+    .fa-telegram { color: #0088cc; }
+    .fa-youtube { color: #FF0000; }
 
     .links a:hover {
       transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .toggle {
@@ -99,33 +100,53 @@
       font-size: 14px;
       opacity: 0.7;
     }
+  </style>
+</head>
+<body>
 
-  </style></head>
-<body>  <div class="container"><button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+<div class="container">
+  <button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
 
-<div class="profile">
-  <img src="IMG-20260322-WA0070.jpg" alt="profile">
-  <h1>H.R</h1>
-  <p>ِAll My Accounts Are here 👇</p>
+  <div class="profile">
+    <img src="IMG-20260322-WA0070.jpg" alt="profile">
+    <h1>H.R</h1>
+    <p>ِAll My Accounts Are here 👇</p>
+  </div>
+
+  <div class="links">
+    <a href="https://wa.me/201121331354?text=Hello%20H.R" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="https://facebook.com/hassan.ragab.75033" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+    <a href="https://instagram.com/hassona3.5" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://www.snapchat.com/add/hassanragab8213" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-snapchat"></i> Snapchat
+    </a>
+    <a href="https://www.tikTok.com/@hassona.26.2" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-tiktok"></i> TikTok
+    </a>
+    <a href="https://t.me/hassona20000" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-telegram"></i> Telegram
+    </a>
+    <a href="https://youtube.com/@HassanRagab-ps4dq" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+  </div>
+
+  <footer>
+    © 2026 H.R
+  </footer>
 </div>
 
-<div class="links">
-  <a href="https://wa.me/201121331354?text=Helo%20H.R" target="_blank\" rel=\"noopener noreferrer\">📱 WhatsApp</a>
-  <a href="https://facebook.com/hassan.ragab.75033" target="_blank\" rel=\"noopener noreferrer\">📘 Facebook</a>
-  <a href="https://instagram.com/hassona3.5" target="_blank\" rel=\"noopener noreferrer\">📸 Instagram</a>
-  <a href="https://www.snapchat.com/add/hassanragab8213" target="_blank\" rel=\"noopener noreferrer\">👻 Snapchat</a>
-  <a href="https://www.tikTok.com/@hassona.26.2" target="_blank\" rel=\"noopener noreferre\">🎵 TikTok</a>
-  <a href="https://t.me/hassona20000?text=Helo%20H.R" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
-  <a href="https://youtube.com/@HassanRagab-ps4dq" target="_blank" rel="noopener noreferrer">🎬 YouTube</a>
-</div>
+<script>
+  function toggleMode() {
+    document.body.classList.toggle("light");
+  }
+</script>
 
-<footer>
-  © 2026 H.R
-</footer>
-
-</div>  <script>
-    function toggleMode() {
-      document.body.classList.toggle("light");
-    }
-  </script></body>
+</body>
 </html>
