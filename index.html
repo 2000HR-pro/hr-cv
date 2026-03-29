@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>H.R Links</title>
-  <style>
+  <title>H.R Links</title>  <style>
     :root {
       --bg: #0f2027;
       --card: #1e2a32;
@@ -96,83 +94,38 @@
       font-weight: bold;
     }
 
-    /* تنسيق قسم العداد */
-    .visitor-counter {
-      margin-top: 20px;
-      font-size: 15px;
-      padding: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      display: inline-block;
-      border-radius: 10px;
-      opacity: 0.9;
-    }
-
-    #count {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 18px;
-    }
-
     footer {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 14px;
       opacity: 0.7;
     }
 
-  </style>
-</head>
-<body>
+  </style></head>
+<body>  <div class="container"><button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
 
-<div class="container">
-  <button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
-
-  <div class="profile">
-    <img src="IMG-20260322-WA0070.jpg" alt="profile">
-    <h1>H.R</h1>
-    <p>ِAll My Accounts Are here 👇</p>
-  </div>
-
-  <div class="links">
-    <a href="https://wa.me/201121331354?text=Helo%20H.R" target="_blank" rel="noopener noreferrer">📱 WhatsApp</a>
-    <a href="https://facebook.com/hassan.ragab.75033" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
-    <a href="https://instagram.com/hassona3.5" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-    <a href="https://www.snapchat.com/add/hassanragab8213" target="_blank" rel="noopener noreferrer">👻 Snapchat</a>
-    <a href="https://www.tikTok.com/@hassona.26.2" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
-    <a href="https://t.me/hassona20000?text=Helo%20H.R" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
-    <a href="https://youtube.com/@HassanRagab-ps4dq" target="_blank" rel="noopener noreferrer">🎬 YouTube</a>
-  </div>
-
-  <div class="visitor-counter">
-    👁️ المشاهدات: <span id="count">جارِ التحميل...</span>
-  </div>
-
-  <footer>
-    © 2026 H.R
-  </footer>
-
+<div class="profile">
+  <img src="IMG-20260322-WA0070.jpg" alt="profile">
+  <h1>H.R</h1>
+  <p>ِAll My Accounts Are here 👇</p>
 </div>
 
-<script>
-  function toggleMode() {
-    document.body.classList.toggle("light");
-  }
+<div class="links">
+  <a href="https://wa.me/201121331354?text=Helo%20H.R" target="_blank\" rel=\"noopener noreferrer\">📱 WhatsApp</a>
+  <a href="https://facebook.com/hassan.ragab.75033" target="_blank\" rel=\"noopener noreferrer\">📘 Facebook</a>
+  <a href="https://instagram.com/hassona3.5" target="_blank\" rel=\"noopener noreferrer\">📸 Instagram</a>
+  <a href="https://www.snapchat.com/add/hassanragab8213" target="_blank\" rel=\"noopener noreferrer\">👻 Snapchat</a>
+  <a href="https://www.tikTok.com/@hassona.26.2" target="_blank\" rel=\"noopener noreferre\">🎵 TikTok</a>
+  <a href="https://t.me/hassona20000?text=Helo%20H.R" target="_blank" rel="noopener noreferrer">✈️ Telegram</a>
+  <a href="https://youtube.com/@HassanRagab-ps4dq" target="_blank" rel="noopener noreferrer">🎬 YouTube</a>
+</div>
 
-  // دالة جلب عدد الزيارات
-  function updateCounter() {
-    // استخدمنا مفتاح فريد 'hassan_hr_links_2026' لضمان دقة العد لصفحتك
-    fetch('https://api.countapi.xyz/hit/hassan_hr_links_2026/visits')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('count').innerText = data.value;
-      })
-      .catch(() => {
-        document.getElementById('count').innerText = "1"; // قيمة افتراضية في حال الخطأ
-      });
-  }
+<footer>
+  © 2026 H.R
+</footer>
 
-  // تشغيل العداد عند تحميل الصفحة
-  window.onload = updateCounter;
-</script>
-
-</body>
+</div>  <script>
+    function toggleMode() {
+      document.body.classList.toggle("light");
+    }
+  </script></body>
 </html>
