@@ -1,0 +1,214 @@
+/* === تعريف متغيرات الألوان (Themes Variables) === */
+:root {
+    --primary-color: #0d6efd;   /* الأزرق الأساسي للحدود والأزرار */
+    --secondary-color: #1a1e21; /* الرمادي الداكن للخلفيات */
+    --accent-color: #0dcaf0;    /* الأزرق الفاتح للتأكيد والألوان الإضافية */
+    --bg-body: #f4f7f6;         /* لون خلفية الصفحة الفاتح */
+    --bg-card: #ffffff;         /* لون خلفية الكروت */
+    --text-main: #333;          /* لون النص الأساسي */
+    --text-light: #666;         /* لون النص الثانوي الأفتح */
+    --transition: all 0.3s ease; /* سرعة التحول الافتراضية للتأثيرات */
+}
+
+/* === إعدادات التصفير العامة (CSS Reset) === */
+* {
+    box-sizing: border-box; /* لحساب الحدود والحشو ضمن العرض الإجمالي */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', 'Tajawal', sans-serif; /* الخطوط المستخدمة */
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6; /* المسافة بين السطور */
+    direction: ltr; /* اتجاه المحتوى من اليسار لليمين */
+}
+
+/* حاوية لتوسيط المحتوى وتحديد أقصى عرض له */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === تنسيقات رأس الصفحة (Header Section) === */
+header {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #343a40 100%); /* خلفية متدرجة داعنة */
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-color); /* خط سفلي سميك ومميز */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* === [تعديل] تنسيق صورة البروفايل لتطابق ملف Links تماماً === */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    object-fit: cover; /* لضمان عدم تمدد الصورة داخل الإطار */
+    
+    /* حدود سميكة ولون التأكيد (كما في ملف Links) */
+    border: 4px solid var(--accent-color); 
+    
+    /* تفعيل حركة الطفو (float) */
+    animation: float 3s ease-in-out infinite; 
+    
+    /* ظل خفيف لإعطاء عمق */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: var(--transition);
+}
+
+/* === [إضافة] تعريف حركة الطفو (Floating Animation) كما في ملف Links === */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* الوضع الطبيعي في البداية والنهاية */
+    }
+    50% {
+        transform: translateY(-10px); /* الارتفاع للأعلى قليلاً في منتصف الحركة */
+    }
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 10px;
+}
+
+header h2 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px; /* مسافة بين الأحرف */
+}
+
+/* === تنسيقات المحتوى الرئيسي والكروت (Main & Cards) === */
+main {
+    padding: 40px 0;
+    display: grid;
+    /* تخطيط شبكي مرن يتكيف مع حجم الشاشة تلقائياً */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+section {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* ظل ناعم للكروت */
+    border-top: 4px solid var(--primary-color); /* خط علوي ملون */
+    transition: var(--transition);
+}
+
+/* تأثير عند تمرير الماوس فوق الكرت */
+section:hover {
+    transform: translateY(-5px); /* ارتفاع الكرت للأعلى */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid #eee; /* خط سفلي للعناوين */
+    padding-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.project-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* === تنسيقات قسم اللغات (Languages List) === */
+.language-item {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر على الأطراف */
+    align-items: center;
+    border: 1px solid #eee;
+}
+
+.lang-level {
+    color: var(--primary-color);
+    background-color: rgba(13, 110, 253, 0.1); /* خلفية فاتحة جداً بنفس لون النص */
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* === تنسيقات نموذج التواصل (Contact Form) === */
+.contact-section {
+    grid-column: 1 / -1; /* لجعل القسم يأخذ العرض الكامل للشبكة */
+    border-top-color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-family: inherit; /* لوراثة الخط من الـ body */
+    transition: var(--transition);
+}
+
+/* تأثير عند التركيز على حقل الإدخال (Focus) */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.2);
+}
+
+/* تنسيق زر الإرسال */
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+/* تأثير زر الإرسال عند التمرير بالماوس */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* لون أغمق */
+}
+
+/* === استعلامات الوسائط لتجاوب الصفحة (Media Queries) === */
+@media (max-width: 768px) {
+    /* عند تصغير الشاشة، اجعل الكروت عمودية */
+    main { grid-template-columns: 1fr; }
+    header h1 { font-size: 2rem; } /* تصغير الخط قليلاً */
+}
