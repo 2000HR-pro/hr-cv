@@ -1,18 +1,19 @@
-// Function for scroll animations
-function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 100;
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
+// تأثيرات الظهور البسيطة
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
         }
-    }
-}
+    });
+}, observerOptions);
 
-// Event listeners
-window.addEventListener("scroll", reveal);
+document.querySelectorAll('.reveal').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "all 0.6s ease-out";
+    observer.observe(el);
+});
 
-// Initial check when page loads
-reveal();
+// إضافة كلاس النشاط عند الرؤية
+document.styleSheets[0].insertRule('.active { opacity: 1 !important; transform: translateY(0) !important; }', 0);
