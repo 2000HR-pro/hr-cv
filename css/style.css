@@ -5,6 +5,10 @@
     --bg: #f8f9fa;
     --card-bg: #ffffff;
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* ألوان التواصل */
+    --whatsapp: #25d366;
+    --linkedin: #0077b5;
+    --github: #333;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +22,6 @@ body {
 
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-/* Header & Profile Animation */
 header {
     background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
     color: white;
@@ -26,7 +29,6 @@ header {
     text-align: center;
     border-radius: 0 0 40px 40px;
     position: relative;
-    overflow: hidden;
 }
 
 .profile-container {
@@ -44,11 +46,9 @@ header {
     border: 4px solid rgba(255, 255, 255, 0.8);
     position: relative;
     z-index: 2;
-    transition: var(--transition);
-    animation: float 4s ease-in-out infinite; /* أنيميشن التحريك للأعلى والأسفل */
+    animation: float 4s ease-in-out infinite;
 }
 
-/* تأثير الإضاءة الدوارة خلف الصورة */
 .img-glow {
     position: absolute;
     top: -5px; left: -5px; right: -5px; bottom: -5px;
@@ -60,22 +60,14 @@ header {
     opacity: 0.7;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-}
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes rotateGlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-@keyframes rotateGlow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-/* Grid & Cards */
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
-    margin-top: -40px; /* لرفع الكروت فوق الهيدر قليلاً */
+    margin-top: -40px;
     padding-bottom: 50px;
 }
 
@@ -88,9 +80,42 @@ header {
     transition: var(--transition);
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+.card:hover { transform: translateY(-10px); }
+
+/* تنسيق أزرار التواصل الجديدة */
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-item {
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.social-item:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.github { background: var(--github); }
+.linkedin { background: var(--linkedin); }
+.whatsapp { background: var(--whatsapp); }
+.email { background: var(--primary); }
+
+.separator {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 25px 0;
 }
 
 /* Skills Tags */
@@ -100,14 +125,12 @@ header {
     padding: 6px 15px;
     border-radius: 50px;
     margin: 5px;
-    font-size: 0.9rem;
     font-weight: 600;
-    color: var(--dark);
     border: 1px solid #e9ecef;
 }
 
-/* Form Styles */
 .contact-section { grid-column: 1 / -1; }
+
 input, textarea {
     width: 100%;
     padding: 15px;
@@ -115,10 +138,7 @@ input, textarea {
     border: 2px solid #eee;
     border-radius: 12px;
     outline: none;
-    transition: 0.3s;
 }
-
-input:focus, textarea:focus { border-color: var(--primary); }
 
 .submit-btn {
     background: var(--primary);
@@ -128,20 +148,8 @@ input:focus, textarea:focus { border-color: var(--primary); }
     border-radius: 12px;
     font-weight: bold;
     cursor: pointer;
-    transition: var(--transition);
     width: 100%;
 }
 
-.submit-btn:hover { background: #0056b3; letter-spacing: 1px; }
-
-/* Reveal Animation Class */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
