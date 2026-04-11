@@ -1,4 +1,3 @@
-document.addEventListener('contextmenu', event => event.preventDefault());
 // 1. Mobile Menu Toggle
 const menuIcon = document.querySelector('#menu-icon');
 const navbar = document.querySelector('.navbar');
