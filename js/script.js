@@ -50,5 +50,3 @@ window.onscroll = () => {
         }
     });
 };
-
-sr.reveal('.home-img, .exp-card, .skill-box', { origin: 'bottom', interval: 100 });
